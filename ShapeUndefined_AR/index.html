@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AR 16 Cards</title>
+
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: Arial;
+      }
+
+      #hint {
+        position: fixed;
+        top: 20px;
+        width: 100%;
+        text-align: center;
+        color: white;
+        z-index: 999;
+        font-size: 16px;
+        text-shadow: 0 0 8px black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="hint">请将摄像头对准卡片</div>
+
+    <a-scene
+      mindar-image="imageTargetSrc: ./targets.mind;"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+      renderer="colorManagement: true, physicallyCorrectLights"
+    >
+
+      <!-- 摄像头 -->
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+      <!-- ===================== -->
+      <!-- 16个模型资产 -->
+      <!-- ===================== -->
+      <a-assets>
+        <a-asset-item id="m0" src="./models/shape01.glb"></a-asset-item>
+        <a-asset-item id="m1" src="./models/shape02.glb"></a-asset-item>
+        <a-asset-item id="m2" src="./models/shape03.glb"></a-asset-item>
+        <a-asset-item id="m3" src="./models/shape04.glb"></a-asset-item>
+        <a-asset-item id="m4" src="./models/shape05.glb"></a-asset-item>
+        <a-asset-item id="m5" src="./models/shape06.glb"></a-asset-item>
+        <a-asset-item id="m6" src="./models/shape07.glb"></a-asset-item>
+        <a-asset-item id="m7" src="./models/shape08.glb"></a-asset-item>
+        <a-asset-item id="m8" src="./models/shape09.glb"></a-asset-item>
+        <a-asset-item id="m9" src="./models/shape10.glb"></a-asset-item>
+        <a-asset-item id="m10" src="./models/shape11.glb"></a-asset-item>
+        <a-asset-item id="m11" src="./models/shape12.glb"></a-asset-item>
+        <a-asset-item id="m12" src="./models/shape13.glb"></a-asset-item>
+        <a-asset-item id="m13" src="./models/shape14.glb"></a-asset-item>
+        <a-asset-item id="m14" src="./models/shape15.glb"></a-asset-item>
+        <a-asset-item id="m15" src="./models/shape16.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- ===================== -->
+      <!-- 16个卡片识别点 -->
+      <!-- ===================== -->
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model src="#m0" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model src="#m1" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model src="#m2" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model src="#m3" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 4">
+        <a-gltf-model src="#m4" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 5">
+        <a-gltf-model src="#m5" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 6">
+        <a-gltf-model src="#m6" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 7">
+        <a-gltf-model src="#m7" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 8">
+        <a-gltf-model src="#m8" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 9">
+        <a-gltf-model src="#m9" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 10">
+        <a-gltf-model src="#m10" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 11">
+        <a-gltf-model src="#m11" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 12">
+        <a-gltf-model src="#m12" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 13">
+        <a-gltf-model src="#m13" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 14">
+        <a-gltf-model src="#m14" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 15">
+        <a-gltf-model src="#m15" scale="0.4 0.4 0.4"></a-gltf-model>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>

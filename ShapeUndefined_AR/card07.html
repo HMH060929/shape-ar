@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Personality Form 07</title>
+
+  <!-- 1. head（A-Frame + MindAR） -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <!-- 2. style -->
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: black;
+      font-family: Arial;
+    }
+
+    #loading {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #333;
+      border-top: 4px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    .loading-text {
+      text-align: center;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    #hint {
+      position: fixed;
+      top: 20px;
+      width: 100%;
+      text-align: center;
+      color: white;
+      z-index: 9998;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 3. loading动画 -->
+  <div id="loading">
+    <div class="spinner"></div>
+    <div class="loading-text">
+      正在生成你的“人格形态07”<br/>
+      Generating your “Personality Form 07”
+    </div>
+  </div>
+
+  <!-- 4. hint双语 -->
+  <div id="hint">
+    请将摄像头对准卡片07<br/>
+    Please point your camera at Card 07
+  </div>
+
+  <!-- 5. mindAR scene -->
+  <a-scene
+    mindar-image="imageTargetSrc: ./card07.mind;"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false"
+  >
+
+    <a-camera position="0 0 0" look-controls="enabled:false"></a-camera>
+
+    <!-- 6. mind-image-target（关键） -->
+    <a-entity mindar-image-target="targetIndex: 0">
+
+      <!-- 7. glb模型 -->
+      <a-gltf-model
+        src="./models/shape07.glb"
+        position="0 0 -2.5"
+        scale="0.7 0.7 0.7"
+
+        <!-- 8. animation -->
+        animation__rot="
+          property: rotation;
+          to: 0 360 0;
+          loop: true;
+          dur: 14000;
+          easing: linear;
+        "
+      ></a-gltf-model>
+
+    </a-entity>
+
+  </a-scene>
+
+  <!-- 9. loading JS -->
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+      }, 1500);
+    });
+  </script>
+
+</body>
+</html>
